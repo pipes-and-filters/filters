@@ -92,7 +92,7 @@ func (e *Exec) SetOutput(w io.Writer) {
 	e.command.Stdout = w
 }
 
-// Return an array of errors
+// Errors returns an array of errors
 func (e *Exec) Errors() []error {
 	es := make([]error, 0)
 	e.errors(&es)
