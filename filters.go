@@ -12,7 +12,9 @@ import (
 )
 
 var (
-	ErrNotPointer        = errors.New("Unmarshal requires pointer")
+	// ErrNotPointer the passed in vvariable was not a pointer
+	ErrNotPointer = errors.New("Unmarshal requires pointer")
+	// ErrChainDoesNotExist the chain was not found in the list of chains
 	ErrChainDoesNotExist = errors.New("Chain does not exist")
 )
 
