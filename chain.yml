@@ -1,0 +1,28 @@
+Chain:
+- Name: 'ls'
+  Domain: 'bash'
+  Version: '1.0'
+  Command: 'ls'
+  Arguments:
+  VCS:
+          Type: 'git'
+          Loaction: 'github.com'
+- Name: 'grep'
+  Domain: 'bash'
+  Version: '1.0'
+  Command: 'grep'
+  Arguments:
+          - 'filters'
+  VCS:
+          Type: 'git'
+          Loaction: 'github.com'
+- Name: 'xargs'
+  Domain: 'bash'
+  Version: '1.0'
+  Command: 'xargs'
+  Arguments:
+          - '-n'
+          - '3'
+  VCS:
+          Type: 'git'
+          Loaction: 'github.com'
