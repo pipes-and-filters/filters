@@ -14,6 +14,8 @@ var (
 )
 
 // Flags will generate filter flag, this should be called in your init
+// It takes your appname as an argument and will also look in env-vars
+// as FILTER_APP, CHAIN_APP, CHAINS_APP
 func Flags(app string) {
 	appu := strings.ToUpper(app)
 	flag.StringVar(
