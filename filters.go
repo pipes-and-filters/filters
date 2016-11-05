@@ -52,7 +52,12 @@ func New() Filter {
 // FilterFile returns a new Filter from a file definitions
 func FilterFile(file string) (Filter, error) {
 	f := New()
-	return f, fromFile(file, f)
+	return f, fromFile(file, &f)
+}
+
+// Argument appends an argument
+func (f *Filter) Argument(a string) {
+	f.Arguments = append(f.Arguments, a)
 }
 
 // Exec creates an executable command that is attached to input and output

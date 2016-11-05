@@ -1,0 +1,5 @@
+Name: 'cat'
+Domain: 'bash'
+Version: '1.0'
+Command: 'cat'
+Arguments:
