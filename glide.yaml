@@ -1,0 +1,7 @@
+package: github.com/pipes-and-filters/filters
+import:
+- package: gopkg.in/yaml.v2
+testImport:
+- package: github.com/davecgh/go-spew
+  subpackages:
+  - spew
