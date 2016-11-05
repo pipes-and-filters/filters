@@ -1,3 +1,6 @@
+deps:
+	go get -v github.com/Masterminds/glide
+	glide install
 test:
 	@glide novendor|xargs go test -v
 cover:
