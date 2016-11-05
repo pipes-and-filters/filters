@@ -64,7 +64,9 @@ func (f *Filter) Argument(a string) {
 func (f *Filter) Exec() *Exec {
 	e := Exec{
 		command: exec.Command(f.Command, f.Arguments...),
+		err:     Error{command: f.Command, err: make([]byte, 0)},
 	}
+	e.command.Stderr = &e.err
 	return &e
 }
 
@@ -73,6 +75,7 @@ type Exec struct {
 	command *exec.Cmd
 	link    *Exec
 	writer  *io.PipeWriter
+	err     Error
 }
 
 // SetInput sets input for the Exec
@@ -87,6 +90,23 @@ func (e *Exec) SetOutput(w io.Writer) {
 		return
 	}
 	e.command.Stdout = w
+}
+
+// Return an array of errors
+func (e *Exec) Errors() []error {
+	es := make([]error, 0)
+	e.errors(&es)
+	return es
+}
+
+func (e *Exec) errors(es *[]error) {
+	if len(e.err.err) > 0 {
+		*es = append(*es, e.err)
+	}
+	if e.link != nil {
+		e.errors(es)
+		return
+	}
 }
 
 // Run the command against the inputs and outputs
