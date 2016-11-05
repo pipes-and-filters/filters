@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"io"
 	"testing"
-
-	"github.com/davecgh/go-spew/spew"
 )
 
 type fakeReaderWriter struct {
@@ -160,6 +158,5 @@ func TestFromFile(t *testing.T) {
 	if err.Error() != "stat bogus.yml: no such file or directory" {
 		t.Error("Expected bad file error")
 	}
-	spew.Dump(err)
 
 }
