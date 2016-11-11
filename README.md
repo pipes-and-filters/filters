@@ -44,7 +44,7 @@ Chain:
           - '-n'
           - '3'
 ```
-Chain YAML Example
+Chains YAML Example
 ```yml
 FirstChain:
         Chain:
