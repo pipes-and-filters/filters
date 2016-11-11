@@ -7,7 +7,7 @@ FirstChain:
           Arguments:
           VCS:
                   Type: 'git'
-                  Loaction: 'github.com'
+                  Location: 'github.com'
         - Name: 'grep'
           Domain: 'bash'
           Version: '1.0'
@@ -16,7 +16,7 @@ FirstChain:
                   - 'filters'
           VCS:
                   Type: 'git'
-                  Loaction: 'github.com'
+                  Location: 'github.com'
         - Name: 'xargs'
           Domain: 'bash'
           Version: '1.0'
@@ -26,7 +26,7 @@ FirstChain:
                   - '4'
           VCS:
                   Type: 'git'
-                  Loaction: 'github.com'
+                  Location: 'github.com'
 SecondChain:
         Chain:
         - Name: 'ls'
@@ -36,7 +36,7 @@ SecondChain:
           Arguments:
           VCS:
                   Type: 'git'
-                  Loaction: 'github.com'
+                  Location: 'github.com'
         - Name: 'grep'
           Domain: 'bash'
           Version: '1.0'
@@ -45,7 +45,7 @@ SecondChain:
                   - 'filters'
           VCS:
                   Type: 'git'
-                  Loaction: 'github.com'
+                  Location: 'github.com'
         - Name: 'xargs'
           Domain: 'bash'
           Version: '1.0'
@@ -55,5 +55,5 @@ SecondChain:
                   - '4'
           VCS:
                   Type: 'git'
-                  Loaction: 'github.com'
+                  Location: 'github.com'
 
