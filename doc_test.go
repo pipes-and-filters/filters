@@ -41,3 +41,71 @@ func Example_input() {
 	// Output:
 	// goodbye world
 }
+
+func Example_chain() {
+	text := "Alphabet city is haunted\n"
+	text += "Constantina feels right at home\n"
+	text += "She probably wont say youre wrong\n"
+	text += "Youre already wrong\nYoure already wrong\n"
+	filtercat := New()
+	filtercat.Command = "cat"
+	filtergrep := New()
+	filtergrep.Command = "grep"
+	filtergrep.Argument("wrong")
+	filterxargs := New()
+	filterxargs.Command = "xargs"
+	filterxargs.Argument("-n")
+	filterxargs.Argument("3")
+	c := Chain{
+		Filters: []Filter{
+			filtercat,
+			filtergrep,
+			filterxargs,
+		},
+	}
+	exec, err := c.Exec()
+	if err != nil {
+		log.Print(err)
+	}
+	exec.SetInput(bytes.NewReader([]byte(text)))
+	var buf bytes.Buffer
+	exec.SetOutput(&buf)
+	err = exec.Run()
+	if err != nil {
+		log.Print(err)
+	}
+	fmt.Print(buf.String())
+	// Output:
+	// She probably wont
+	// say youre wrong
+	// Youre already wrong
+	// Youre already wrong
+}
+
+func Example_chainfile() {
+	text := "Alphabet city is haunted\n"
+	text += "Constantina feels right at home\n"
+	text += "She probably wont say youre wrong\n"
+	text += "Youre already wrong\nYoure already wrong\n"
+	c, err := ChainFile("chain.yml")
+	if err != nil {
+		log.Print(err)
+	}
+	exec, err := c.Exec()
+	if err != nil {
+		log.Print(err)
+	}
+	exec.SetInput(bytes.NewReader([]byte(text)))
+	var buf bytes.Buffer
+	exec.SetOutput(&buf)
+	err = exec.Run()
+	if err != nil {
+		log.Print(err)
+	}
+	fmt.Print(buf.String())
+	// Output:
+	// She probably wont
+	// say youre wrong
+	// Youre already wrong
+	// Youre already wrong
+}
