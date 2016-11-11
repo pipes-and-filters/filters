@@ -14,7 +14,7 @@ The command allows setting the commands explicitly or loading from a yaml file.
 A Filter is any cli command, but primarily focused on the idea of unix cli commands being used as byte filters used to mangle and transform text and piping commands together.
 
 ##Chain
-A Chain is a sequential list of Filters with each piping its output into the last.
+A Chain is a sequential list of Filters with each piping its output into the next.
 
 ##Exec
 From either a chain or filter an Exec can be generated.
