@@ -5,6 +5,3 @@ install:
 script:
 - make test
 - make cover
-after_success:
-- go get -v github.com/mattn/goveralls
-- goveralls -coverprofile=cover.profile -service=travis-ci
