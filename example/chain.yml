@@ -1,0 +1,14 @@
+Chain:
+- Name: 'grep'
+  Domain: 'bash'
+  Version: '1.0'
+  Command: 'grep'
+  Arguments:
+          - 'hello'
+- Name: 'xargs'
+  Domain: 'bash'
+  Version: '1.0'
+  Command: 'xargs'
+  Arguments:
+          - '-n'
+          - '1'

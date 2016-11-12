@@ -8,6 +8,10 @@ commands using stdin and stdout.
 [![Build Status](https://travis-ci.org/pipes-and-filters/filters.svg?branch=master)](https://travis-ci.org/pipes-and-filters/filters)
 [![Go Report Card](https://goreportcard.com/badge/github.com/pipes-and-filters/filters)](https://goreportcard.com/report/github.com/pipes-and-filters/filters)
 
+
+![tty](https://raw.githubusercontent.com/pipes-and-filters/filters/master/images/tty.gif "Example")
+
+
 The command allows setting the commands explicitly or loading from a yaml file.
 
 ##Filter
