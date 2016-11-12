@@ -4,4 +4,3 @@ install:
 - make deps
 script:
 - make test
-- make cover
