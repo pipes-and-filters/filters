@@ -104,7 +104,7 @@ func (e *Exec) errors(es *[]error) {
 		*es = append(*es, e.err)
 	}
 	if e.link != nil {
-		e.errors(es)
+		e.link.errors(es)
 		return
 	}
 }
