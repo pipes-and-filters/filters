@@ -99,6 +99,11 @@ func (e *Exec) Errors() []error {
 	return es
 }
 
+// Detach, detaches the execution from the calling process
+func (e *Exec) Detach() {
+	e.command.SysProcAttr.Setpgid = true
+}
+
 func (e *Exec) errors(es *[]error) {
 	if len(e.err.err) > 0 {
 		*es = append(*es, e.err)
