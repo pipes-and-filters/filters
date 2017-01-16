@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"reflect"
+	"syscall"
 
 	yaml "gopkg.in/yaml.v2"
 )
@@ -101,7 +102,7 @@ func (e *Exec) Errors() []error {
 
 // Detach, detaches the execution from the calling process
 func (e *Exec) Detach() {
-	e.command.SysProcAttr.Setpgid = true
+	e.command.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
 }
 
 func (e *Exec) errors(es *[]error) {
