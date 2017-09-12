@@ -14,23 +14,23 @@ commands using stdin and stdout.
 
 The command allows setting the commands explicitly or loading from a yaml file.
 
-##Filter
+## Filter
 A Filter is any cli command, but primarily focused on the idea of unix cli commands being used as byte filters used to mangle and transform text and piping commands together.
 
-##Chain
+## Chain
 A Chain is a sequential list of Filters with each piping its output into the next.
 
-##Exec
+## Exec
 From either a chain or filter an Exec can be generated.
 
 Input for an Exec is provided as a io.Reader and output is assigned as an io.Writer.
 
 On an Exec from a  chain, input is assigned to the first process and output assigned to the last.  Everything in between is automatically piped to the next Filter.
 
-##Chains
+## Chains
 Chains allow the application to load multiple chains in one yaml file and retrive them by title.
 
-##Yaml file definitions
+## Yaml file definitions
 Filter YAML Example
 ```yml
 Name: 'cat'
